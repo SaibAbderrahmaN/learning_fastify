@@ -1,11 +1,23 @@
 const Controller = require("../../controller/products")
 const service = require('../../service/Emailer')
 
+const redis = require('redis');
+
+const REDIS_PORT = process.env.PORT || 6379;
+
+const client = redis.createClient(6379);
+
 
 module.exports = async function (fastify,opts){
     fastify.post('/create',opts,Controller.create )
     fastify.get('/getProduct/:id',opts,Controller.findProductsById)
+     
 
+    fastify.get('/set',opts, async (req, reply) => {
+        const rahmon = await client.get('rahmon')
+        reply.code(200).send(rahmon)
+       
+      })
 
 
     fastify.get('/sendmail/:email',opts, async (req, reply) => {

@@ -29,7 +29,9 @@
     "nodemailer": "^6.9.0",
     "nodemailer-express-handlebars": "^6.0.0",
     "redis": "^4.5.1",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.28.0",
+    "web-push": "^3.5.0",
+    "worker-thread": "^1.1.0"
   },
   "devDependencies": {
     "tap": "^16.1.0"
