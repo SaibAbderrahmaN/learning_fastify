@@ -1,8 +1,6 @@
 
 
 
-
-
 module.exports = (sequelize, DataTypes) => {
     const client = sequelize.define('client', {
       id: {

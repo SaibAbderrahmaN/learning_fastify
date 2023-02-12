@@ -1,13 +1,18 @@
 
-//const { parentPort }= require("worker-thread");
-//let counter = 0
-//for (let i = 0 ; i<20000000000;i++){
-//    counter++
-//}
-//
-//
-//parentPort.postMessage(counter)
-self.addEventListener('push', (e) => {
+
+
+ const { parentPort} = require('worker_threads');
+ let counter = 0
+ for (let i = 0 ; i<200000000;i++){
+     counter++
+ }
+ 
+ 
+ parentPort.postMessage(counter)
+
+
+
+/*//self.addEventListener('push', (e) => {
     self.registration.showNotification('Selam', {
         body: e.data.text(),
         icon: 'https://cdn4.iconfinder.com/data/icons/seo-fourteen-black-and-white/128/button-turn_on-start-push-128.png',
@@ -22,10 +27,11 @@ self.addEventListener('push', (e) => {
             }
         ]
     })
-})
-self.addEventListener('notificationclick', (event) => {
+//})
+//self.addEventListener('notificationclick', (event) => {
     if (event.action === 'lookMessage') {
         event.notification.close();
         clients.openWindow('https://www.google.com/')
     }
-})
+//})
+*/
